@@ -13,8 +13,70 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+var articleOne = {
+    title:  'Article One | Rohan Jadhav',
+    heading: 'Article One',
+    date: 'Feb 21, 2018',
+    content:`<p>    
+                  This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. 
+              </p>
+              <p>
+                  This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. 
+              </p>
+              <p>
+                  This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. 
+              </p>`
+};
+
+
+function createTemplate (data) {
+    title=data.title;
+    heading=data.heading;
+    date=data.date;
+    content=data.content;
+    
+    
+    var htmlTemplate =`
+       <html>
+      <head>
+          <title>
+              ${title}
+          </title>
+          <meta name="viewport" content="width-device-width, initial-scale-1" />
+          <link href="/ui/style.css" rel="stylesheet" />
+          
+      </head>
+      
+       <body>
+          <div class="container">
+              
+              <div>
+                  <a href="/">Home</a>
+              </div>
+              <hr/>
+              <h3>
+                  ${heading}
+              </h3>
+              <div>
+                  ${date}
+              </div>
+              
+              <div>
+                  ${contents}
+              </div>
+          </div>
+      </body>
+     </html>
+    
+      `;
+      return htmlTemplate;
+}
+
+
+
+
 app.get('/article-one', function (req, res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html')) 
+   res.send(createTemplate(articleOne)); 
 });
 
 app.get('/article-two', function (req, res){
