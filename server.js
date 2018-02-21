@@ -28,22 +28,20 @@ var articles = {
               </p>`
     },
     'article-two': {
-    title:  'Article Two | Rohan Jadhav',
-    heading: 'Article Two',
-    date: 'Jan 17, 2018',
-    content:`<p>    
+        title:  'Article Two | Rohan Jadhav',
+        heading: 'Article Two',
+        date: 'Jan 17, 2018',
+        content:`<p>    
                  This is The Content For Article Two.
-              </p>`
-        
+                 </p>`
     },
     'article-three': {
         title:  'Article Three | Rohan Jadhav',
-    heading: 'Article Three',
-    date: 'Nov 30, 2019',
-    content:`<p>    
+        heading: 'Article Three',
+        date: 'Nov 30, 2019',
+        content:`<p>    
                  This is The Content For Article Three
-              </p>`
-        
+                 </p>`
     },
     
 };
@@ -94,7 +92,7 @@ function createTemplate (data) {
 
 
 app.get('/:articleName', function (req, res){
-    var articleName=req.param.articleName;
+    var articleName=req.params.articleName;
    res.send(createTemplate(articles[articleName])); 
 });
 
