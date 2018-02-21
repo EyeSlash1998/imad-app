@@ -27,8 +27,6 @@ var articleOne = {
                   This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. This Is Content Of First Article. 
               </p>`
 };
-
-
 function createTemplate (data) {
     var title=data.title;
     var heading=data.heading;
@@ -62,7 +60,7 @@ function createTemplate (data) {
               </div>
               
               <div>
-                  ${contents}
+                  ${content}
               </div>
           </div>
       </body>
