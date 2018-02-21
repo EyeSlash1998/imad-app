@@ -2,7 +2,7 @@ console.log('Loaded!');
 
 
 var element = document.getElementById('main-text');
-element.innerHTML="NEW VALUE";
+element.innerHTML="Hi, I am Rohan..This is My First WebApp.. :) :)";
 
 var img = document.getElementById('madi');
 marginLeft=0;
