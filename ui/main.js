@@ -24,7 +24,7 @@ button.onclick= function() {
 };
 //submit name
 var nameInp=document.getElementById('name');
-var name=nameInp.value;
+var namel=nameInp.value;
 var submit=document.getElementById('submit_btn');
 submit.onclick= function() {
   var names=['name1', 'name2' ,'name3', 'name4'];
