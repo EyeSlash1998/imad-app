@@ -1,16 +1,16 @@
-console.log('Loaded!');
+//Code Button
 
+var button= document.getElementById('counter');
+var counter=0;
 
-var element = document.getElementById('main-text');
-element.innerHTML="Hi, I am Rohan..This is My First WebApp.. :) :)";
-
-var img = document.getElementById('madi');
-marginLeft=0;
-function moveRight() {
-    marginLeft=marginLeft+1;
-    img.style.marginLeft=marginLeft+'px';
+button.onclick= function() {
+    //Make a request to the counter
+    
+    //capture the response and store in the variable
+    
+    //render the variable in the the correct span
+    
+    counter++;
+    var span=document.getElementById('count');
+    span.innerHTML=counter.toString();
 }
-
-img.onclick=function() {
-    var interval=setInterval(moveRight, 50);
-};
