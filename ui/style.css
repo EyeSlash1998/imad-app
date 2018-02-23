@@ -23,7 +23,7 @@ body {
 .container {
           max-width: 800px;
           margin: 0 auto;
-          color: #d21f1f;
+          color: blue;
           font-family: script typeface;
           
           padding-left: 30;
