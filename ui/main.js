@@ -16,7 +16,7 @@ button.onclick= function() {
                 span.innerHTML=counter.toString();
             }
         }
-    }
+    };
     //make a request
     
     request.open('GET','http://uchihamadara301198.imad.hasura-app.io/counter', true);
@@ -24,14 +24,14 @@ button.onclick= function() {
 };
 //submit name
 var nameInp=document.getElementById('name');
-var name=nameInp.value;
+var namel=nameInp.value;
 var submit=document.getElementById('submit_btn');
 submmit.onclick= function() {
   var names=['name1', 'name2' ,'name3', 'name4'];
   var list='';
   for(var i=0;i< name.length;i++)
       list+='<li>'+names[i]+'</li>';
-  }
+  };
   var ul=document.getElementById('namelist');
   ul.innerHTML=list;
 };
