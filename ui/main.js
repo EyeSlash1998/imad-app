@@ -16,7 +16,7 @@ button.onclick= function() {
                 span.innerHTML=counter.toString();
             }
         }
-    };
+    }
     //make a request
     
     request.open('GET','http://uchihamadara301198.imad.hasura-app.io/counter', true);
@@ -25,4 +25,4 @@ button.onclick= function() {
     
     
     
-}
+};
