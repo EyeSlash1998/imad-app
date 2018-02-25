@@ -2,7 +2,6 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool=require('pg').Pool;
-
 var config= {
     user: 'uchihamadara301198',
     database: 'uchihamadara301198',
@@ -13,6 +12,10 @@ var config= {
 
 var app = express();
 app.use(morgan('combined'));
+
+
+
+
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
@@ -105,7 +108,7 @@ function createTemplate (data) {
 
 
 var pool=new Pool(config);
-app.get('/test-db/', function( req,res) {
+app.get('/test-db1/', function( req,res) {
     //make a request
     //return a response
     pool.query('SELECT * from test', function (err, result) {
