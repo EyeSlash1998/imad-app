@@ -102,6 +102,22 @@ function createTemplate (data) {
       `;
       return htmlTemplate;
 }
+
+
+var pool=new Pool(config);
+app.get('/test-db', function( req,res) {
+    //make a request
+    //return a response
+    pool.query('SELECT * from test', function (err, result) {
+        if(err) {
+            res.status(500).send(err.toString());
+        } else {
+            res.send(JSON.stringfy(result));
+        }
+    });
+});
+
+
 var counter=0;
 app.get('/counter', function (req,res) {
    counter++;
@@ -117,18 +133,6 @@ app.get('/submit-name/', function (req,res) {
     res.send(JSON.stringify(names));
 }); 
 
-var pool=new Pool(config);
-app.get('/test-db', function( req,res){
-    //make a request
-    //return a response
-    pool.query('SELECT * from test', function (err, result) {
-        if(err) {
-            res.status(500).send(err.toString());
-        } else {
-            res.send(JSON.stringfy(result));
-        }
-    });
-});
 
 
 
