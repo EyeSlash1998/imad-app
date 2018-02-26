@@ -1,7 +1,13 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-var Pool=require('pg').Pool;
+//var Pool=require('pg').Pool;
+var pg = require('pg');     //changes made
+
+
+
+var PG_CON = []; // this "global" is local to the plugin.
+
 var config= {
     username: 'uchihamadara301198',
     database: 'uchihamadara301198',
@@ -107,7 +113,10 @@ function createTemplate (data) {
 }
 
 
-var pool=new Pool(config);
+//var pool=new Pool(config);
+// create a pool
+var pool = new pg.Pool({connectionString: process.env.DATABASE_URL, ssl: process.env.DATABASE_SSL || false},config);//changes made
+
 app.get('/test-db1/', function( req,res) {
     //make a request
     //return a response
